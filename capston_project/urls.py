@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import render
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('plot/', include('plot.urls')),
+    path('analysis/', include('analysis.urls')),
+    path('', lambda request: render(request, 'main_page.html'), name='main_page'),
 ]
