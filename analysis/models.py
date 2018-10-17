@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class SurveyModel(models.Model):
+class Survey(models.Model):
     SEX_CHOICES = (
         ('m', '남자'),
         ('w', '여자'),
@@ -57,4 +57,9 @@ class SurveyModel(models.Model):
     etc = models.TextField(blank=True, verbose_name='기타사항')
     created = models.DateTimeField(auto_now_add=True, verbose_name='생성일')
     updated = models.DateTimeField(auto_now=True, verbose_name='수정일')
+
+    def __str__(self):
+        return self.name
+
+
 
