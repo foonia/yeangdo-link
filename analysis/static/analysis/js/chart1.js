@@ -1,33 +1,4 @@
-{%  extends 'layout.html' %}
-{% load static %}
-
-{% block content %}
-    <!-- Main -->
-    <div id="main-wrapper">
-        <div class="container">
-            <div class="row gtr-200">
-                <div class="col-4 col-12-medium">
-
-                    <!-- Sidebar -->
-                        <div id="sidebar">
-                            <section class="widget thumbnails">
-                                <div class="grid">
-                                    <div class="row gtr-uniform">
-                                        <p><a href="#" class="button icon fa-area-chart">Chart_One</a></p>
-                                        <p><a href="#" class="button icon fa-area-chart">Chart_Two</a></p>
-                                        <p><a href="#" class="button icon fa-area-chart">Chart_Tree</a></p>
-                                        <p><a href="#" class="button icon fa-area-chart">Chart_Four</a></p>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-
-                </div>
-                <div class="col-8 col-12-medium imp-medium">
-
-                    <!-- Content -->
 <style>
-
 /*
 .chart rect {
   fill: steelblue;
@@ -63,11 +34,9 @@
   shape-rendering: crispEdges;
 }
 
-
 </style>
-<svg class="chart"></svg>
-<script>
 
+<script>
 var data = {
   labels: [
     'element', 'middle', 'high', 'univ'
@@ -214,9 +183,3 @@ legend.append('text')
     .text(function (d) { return d.label; });
 
 </script>
-
-                </div>
-            </div>
-        </div>
-    </div>
-{% endblock %}

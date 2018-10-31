@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third_party_apps
+    'rest_framework',
 
     # apps
     'analysis',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -132,4 +134,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'capston_project', 'static'),
+    os.path.join(BASE_DIR, 'analysis', 'static'),
 )
