@@ -12,6 +12,6 @@ def show_plot(request):
 def submit_data(request):
     return render(request, 'analysis/submit_data.html')
 
-
+ 
 def more_info(request):
     return render(request, 'analysis/more_info.html')
