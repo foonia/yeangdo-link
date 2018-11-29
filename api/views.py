@@ -6,6 +6,8 @@ from rest_framework import generics
 from analysis.models import Survey
 from .serializers import SurveySerializer
 
+from analysis import datas
+
 
 class SurveyViewSet(viewsets.ModelViewSet):
     queryset = Survey.objects.all()
@@ -45,13 +47,18 @@ class SurveyListApiView(generics.ListAPIView):
         else:
             return 3
 
-# [
-#     {
-#         "year": 80,
-#         "data": [3, 4, 6, 1]
-#     },
-#     {
-#         "year": 90,
-#         "data": [1, 3, 1, 1]
-#     }
-# ]
+
+def bar_api_view(request):
+    return JsonResponse(datas.bar_data, safe=False)
+
+
+def chart_api_view(request):
+    return JsonResponse(datas.chart_data, safe=False)
+
+
+def curve_api_view(request):
+    return JsonResponse(datas.curve_data, safe=False)
+
+
+def candle_api_view(request):
+    return JsonResponse(datas.candle_data, safe=False)

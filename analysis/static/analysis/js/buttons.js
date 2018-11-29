@@ -5,18 +5,18 @@ window.onload = function() {
     var btn4 = document.getElementById('chart4');
 
     btn1.addEventListener("click", function() {
-        drawChart1();
+        requestDrawChart(drawChart1, 'bar');
     });
 
     btn2.addEventListener("click", function() {
-        drawChart2();
+        requestDrawChart(drawChart2, 'chart');
     });
 
     btn3.addEventListener("click", function() {
-        drawChart3();
+        requestDrawChart(drawChart3, 'curve');
     });
 
     btn4.addEventListener("click", function() {
-        drawChart4();
+        requestDrawChart(drawChart4, 'candle');
     });
 };
