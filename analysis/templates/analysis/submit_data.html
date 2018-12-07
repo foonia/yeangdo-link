@@ -1,7 +1,83 @@
 {%  extends 'layout.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href={% static  "analysis/css/style.css" %} />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script type="text/javascript" src={% static "analysis/js/util.js" %}></script>
+{% endblock %}
 
 {% block content %}
-    <form action="" method="post">
+    <div class="container">
+        <div class="row gtr-200">
+            <div class="col-12 col-12-medium">
+                <head>
+                    <h2>Send message using SMS API</h2>
+                    <div clsas="pull-right">
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            행정구역
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">동삼동</a>
+                            <a class="dropdown-item" href="#">청학동</a>
+                            <a class="dropdown-item" href="#">신성동</a>
+                          </div>
+                        </div>
+                    <div class="dropdow">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            희망직종
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">관리자</a>
+                              <a class="dropdown-item" href="#">전문가</a>
+                            <a class="dropdown-item" href="#">서비스</a>
+                            <a class="dropdown-item" href="#">사무직</a>
+                            <a class="dropdown-item" href="#">판매</a>
+                            <a class="dropdown-item" href="#">농림어업</a>
+                              <a class="dropdown-item" href="#">기술원</a>
+                            <a class="dropdown-item" href="#">기계,장치</a>
+                            <a class="dropdown-item" href="#">단순노무</a>
+                            <a class="dropdown-item" href="#">군인</a>
+                          </div>
+                        </div>
+                    </div>
+                </head>
+                <body>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">성별</th>
+                                <th scope="col">최종학력</th>
+                                <th scope="col">희망직종</th>
+                                <th scope="col">희망보수</th>
+                                <th scope="col">행정구역</th>
+                            </tr>
+                        </thead>
 
-    </form>
+                        <tbody id="my-tbody"></tbody>
+                    </table>
+                </body>
+                <foot>
+                    <button class="button alt pull-right">SendAll</button>
+{#                    <nav aria-label="Page navigation example">#}
+{#                      <ul class="pagination">#}
+{#                        <li class="page-item"><a class="page-link" id="previous" href="#">Previous</a></li>#}
+{#                        <li class="page-item"><a class="page-link" href="#">1</a></li>#}
+{#                        <li class="page-item"><a class="page-link" href="#">2</a></li>#}
+{#                        <li class="page-item"><a class="page-link" href="#">3</a></li>#}
+{#                        <li class="page-item"><a class="page-link" id="next" href="#">Next</a></li>#}
+{#                      </ul>#}
+{#                    </nav>#}
+                </foot>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 {% endblock %}

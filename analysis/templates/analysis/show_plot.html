@@ -1,6 +1,13 @@
 {%  extends 'layout.html' %}
 {% load static %}
 
+
+{% block head %}
+    <script type="text/javascript" src={% static "analysis/js/charts.js" %}></script>
+    <script type="text/javascript" src={% static "analysis/js/buttons.js" %}></script>
+    <script type="text/javascript" src={% static "api/js/ajax.js" %}></script>
+{% endblock %}
+
 {% block content %}
     <!-- Main -->
     <div id="main-wrapper">

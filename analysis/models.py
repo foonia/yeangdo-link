@@ -67,7 +67,6 @@ class Survey(models.Model):
 
 
 
-
 # class Survey(models.Model):
 #     SEX_CHOICES = (
 #         ('m', '남'),
