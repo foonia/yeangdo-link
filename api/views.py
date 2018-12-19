@@ -1,4 +1,6 @@
 import json
+import urllib.parse
+
 from django.http.response import JsonResponse
 from rest_framework import generics
 from rest_framework import filters
@@ -19,6 +21,19 @@ class SurveyListApiView(generics.ListAPIView):
     serializer_class = SurveySerializer
     filter_backends = (filters.OrderingFilter,)
     ordering = ('id',)
+
+    def get_queryset(self):
+        queryset = Survey.objects.all()
+        address = self.request.query_params.get('address', None)
+        occupation = self.request.query_params.get('occupation', None)
+
+        if address is not None:
+            queryset.filter(address=address)
+        elif occupation is not None:
+            queryset = queryset.filter(desired_occupation1=occupation)
+
+        return queryset
+
 
 def bar_api_view(request):
     return JsonResponse(datas.bar_data, safe=False)
