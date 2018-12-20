@@ -2,10 +2,19 @@ window.onload = function() {
     requestData(add_row);
 
     var occupationSelect = document.getElementById('occupationSelect');
-    console.log(occupationSelect);
+    var confirmSubmit = document.getElementById('confirmSubmit');
+
     occupationSelect.addEventListener('change', function() {
         refreshOccupation(add_row);
-    }, false)
+    }, false);
+
+    confirmSubmit.addEventListener('click', function() {
+        if(confirm('정말 메세지를 보내시겠습니까?')){
+            alert('전송하였습니다.');
+        }else{
+            alert('취소하였습니다.')
+        }
+    })
 };
 
 
