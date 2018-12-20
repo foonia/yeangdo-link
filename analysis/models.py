@@ -47,7 +47,7 @@ class Survey(models.Model):
     phone = models.CharField(max_length=20, blank=True, verbose_name='전화번호')
     email = models.EmailField(null=True, blank=True, verbose_name='이메일')
     final_education = models.CharField(
-        max_length=1,
+        max_length=10,
         blank=True,
         choices=FINAL_EDUCATION_CHOICES,
         default='무학',
